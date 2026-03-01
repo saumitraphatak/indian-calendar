@@ -932,6 +932,213 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   vertical-align: middle;
 }
 
+/* ── Festival Cards (Panel) ─────────────────── */
+.festival-card {
+  display: flex; gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.festival-card:hover { background: #FFF3EB; }
+.festival-card:last-child { border-bottom: none; }
+.fc-left { flex-shrink: 0; padding-top: 0.1rem; }
+.fc-emoji { font-size: 1.6rem; display: block; }
+.fc-body { flex: 1; min-width: 0; }
+.fc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; margin-bottom: 0.1rem; }
+.fc-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--deep-red); }
+.fc-date { font-size: 0.75rem; color: var(--text-soft); white-space: nowrap; }
+.fc-hindi { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.82rem; color: var(--text-soft); margin-bottom: 0.35rem; }
+.fc-desc { font-size: 0.83rem; color: var(--text-mid); line-height: 1.5; margin-bottom: 0.5rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fc-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.fc-type-badge {
+  font-size: 0.68rem; font-weight: 600; padding: 0.1rem 0.55rem;
+  border-radius: 50px; color: white; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.fc-type-badge.hindu    { background: var(--col-hindu); }
+.fc-type-badge.sikh     { background: var(--col-sikh); color: #333; }
+.fc-type-badge.islamic  { background: var(--col-islamic); }
+.fc-type-badge.buddhist { background: var(--col-buddhist); }
+.fc-type-badge.national { background: var(--col-national); }
+.fc-type-badge.christian{ background: var(--col-christian); }
+.fc-region-tag { font-size: 0.68rem; color: var(--text-soft); background: var(--cream-dark);
+  padding: 0.1rem 0.5rem; border-radius: 50px; border: 1px solid var(--border); }
+.panel-empty { padding: 2rem; text-align: center; color: var(--text-soft); font-size: 0.9rem; }
+
+/* ── Modal tab content ───────────────────────── */
+.modal-story p, .modal-significance p { color: var(--text-mid); margin-bottom: 1rem; line-height: 1.8; }
+.modal-story p:first-child::first-letter {
+  float: left; font-family: 'Playfair Display', serif; font-size: 3.2rem;
+  line-height: 0.85; margin-right: 0.1em; color: var(--deep-red);
+}
+.modal-section-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+.modal-empty { color: var(--text-soft); font-style: italic; padding: 1rem 0; }
+.resources-intro { color: var(--text-mid); margin-bottom: 1rem; font-size: 0.9rem; }
+.resource-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.resource-title { font-weight: 500; }
+.resource-src { font-size: 0.75rem; color: var(--text-soft); }
+
+/* Regional entries */
+.modal-regional { display: flex; flex-direction: column; gap: 0.8rem; }
+.regional-entry {
+  padding: 0.9rem 1rem;
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--saffron);
+}
+.regional-name { font-weight: 600; font-size: 0.88rem; color: var(--deep-red); margin-bottom: 0.35rem; }
+.regional-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.55; }
+
+/* Modal header type colours */
+.modal-header.type-hindu    { background: linear-gradient(135deg, #8B1A1A, #D4652A); }
+.modal-header.type-sikh     { background: linear-gradient(135deg, #7A5800, #D4A017); }
+.modal-header.type-islamic  { background: linear-gradient(135deg, #0D4A2E, #1A7A5E); }
+.modal-header.type-buddhist { background: linear-gradient(135deg, #3A5C10, #7B9E3C); }
+.modal-header.type-national { background: linear-gradient(135deg, #1A2F6E, #2C4FA3); }
+.modal-header.type-christian{ background: linear-gradient(135deg, #4A1570, #8B2FC7); }
+
+/* ── Date picker items ───────────────────────── */
+.dp-emoji { font-size: 1.3rem; flex-shrink: 0; }
+.dp-name  { flex: 1; font-size: 0.9rem; font-weight: 500; color: var(--text); }
+.dp-type  { font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 50px;
+  color: white; text-transform: uppercase; }
+.dp-type.hindu    { background: var(--col-hindu); }
+.dp-type.sikh     { background: var(--col-sikh); color: #333; }
+.dp-type.islamic  { background: var(--col-islamic); }
+.dp-type.buddhist { background: var(--col-buddhist); }
+.dp-type.national { background: var(--col-national); }
+.dp-type.christian{ background: var(--col-christian); }
+
+/* ── Calendar Explained (details/summary) ────── */
+.explained-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+  overflow: hidden;
+}
+.explained-summary {
+  padding: 1rem 1.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--deep-red);
+  background: var(--cream-dark);
+  cursor: pointer;
+  list-style: none;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: background var(--transition);
+}
+.explained-summary::-webkit-details-marker { display: none; }
+.explained-summary::before { content: '▶'; font-size: 0.7rem; color: var(--saffron); transition: transform 0.2s; }
+details[open] .explained-summary::before { transform: rotate(90deg); }
+.explained-summary:hover { background: #F0E8D8; }
+.explained-body {
+  padding: 1.4rem 1.6rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  font-size: 0.92rem;
+}
+.explained-body strong { color: var(--deep-red); }
+.explained-body p { margin-bottom: 0.9rem; }
+
+/* Compare grid in explained */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+@media (max-width: 620px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-col { padding: 1.2rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--border); }
+.compare-col.solar  { background: linear-gradient(135deg,#FFF9E6,#FFFBF0); border-left: 4px solid var(--turmeric); }
+.compare-col.lunar  { background: linear-gradient(135deg,#EAF4F8,#F0F8FF); border-left: 4px solid var(--peacock); }
+.compare-col h4 { font-size: 1rem; margin-bottom: 0.8rem; color: var(--text); }
+.compare-col ul { list-style: disc; padding-left: 1.2rem; }
+.compare-col ul li { font-size: 0.86rem; color: var(--text-mid); margin-bottom: 0.3rem; }
+.compare-example { margin-top: 0.9rem; font-size: 0.82rem; color: var(--text-soft);
+  background: rgba(0,0,0,0.04); padding: 0.6rem 0.8rem; border-radius: var(--radius-sm); font-style: italic; }
+
+/* Paksha visual in explained */
+.paksha-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+@media (max-width: 620px) { .paksha-visual { grid-template-columns: 1fr; } }
+.paksha.shukla { background: linear-gradient(135deg,#FFFDE7,#FFF9C4); border-left: 4px solid #F9A825; }
+.paksha.krishna{ background: linear-gradient(135deg,#E8EAF6,#C5CAE9); border-left: 4px solid #3949AB; }
+.paksha-label { font-weight: 700; font-size: 0.95rem; color: var(--text); margin-bottom: 0.2rem; }
+.paksha-desc  { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 0.7rem; }
+.paksha-days  { display: flex; flex-wrap: wrap; gap: 0.2rem; margin-bottom: 0.6rem; }
+.pd { width: 28px; height: 28px; border-radius: 50%; background: rgba(0,0,0,0.07);
+  display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--text-mid); }
+.pd.purnima  { background: #F9A825; color: white; font-size: 0.62rem; width: 36px; border-radius: 8px; }
+.pd.amavasya { background: #3949AB; color: white; font-size: 0.62rem; width: 36px; border-radius: 8px; }
+.paksha-festivals { font-size: 0.8rem; color: var(--text-soft); font-style: italic; }
+
+/* Months table */
+.months-table-wrap { overflow-x: auto; margin: 1rem 0; }
+.months-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.months-table thead tr { background: linear-gradient(135deg, var(--deep-red), var(--saffron)); color: white; }
+.months-table th { padding: 0.6rem 0.9rem; text-align: left; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; }
+.months-table td { padding: 0.55rem 0.9rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+.months-table tbody tr:nth-child(even) td { background: var(--cream); }
+.months-table tbody tr:hover td { background: #FFF3EB; }
+
+/* Date decode steps */
+.date-decode { display: flex; flex-direction: column; gap: 0.7rem; margin: 1rem 0; }
+.decode-step { display: flex; align-items: flex-start; gap: 0.8rem; }
+.decode-num {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--deep-red), var(--saffron));
+  color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700;
+}
+.decode-step > div { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; padding-top: 0.3rem; }
+
+/* ── Year view cards ─────────────────────────── */
+.year-month-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.year-month-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.year-month-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: linear-gradient(135deg, var(--deep-red), var(--saffron));
+  color: white;
+}
+.year-month-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; }
+.year-month-count {
+  font-size: 0.72rem; background: rgba(255,255,255,0.25);
+  padding: 0.1rem 0.45rem; border-radius: 50px;
+}
+.year-fest-list { padding: 0.5rem 0.7rem 0.7rem; }
+.year-fest-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.4rem; border-radius: 4px;
+  font-size: 0.78rem; cursor: pointer;
+  transition: background var(--transition);
+}
+.year-fest-item:hover { background: var(--cream); color: var(--saffron); }
+.year-fest-emoji { font-size: 0.95rem; flex-shrink: 0; }
+.year-fest-name  { color: var(--text-mid); line-height: 1.3; }
+.year-fest-none  { font-size: 0.75rem; color: var(--text-soft); padding: 0.3rem 0.4rem; font-style: italic; }
+
+/* Mini calendar in year view */
+.mini-cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 1px; padding: 0.5rem 0.5rem 0.3rem; background: var(--cream-dark);
+}
+.mini-day-name { font-size: 0.58rem; font-weight: 600; color: var(--text-soft);
+  text-align: center; padding: 0.15rem 0; }
+.mini-cell { font-size: 0.65rem; text-align: center; padding: 0.18rem 0.1rem;
+  border-radius: 3px; color: var(--text-mid); background: white; }
+.mini-cell.empty { background: transparent; }
+.mini-cell.festival-hindu    { background: var(--col-hindu); color: white; }
+.mini-cell.festival-sikh     { background: var(--col-sikh); color: #333; }
+.mini-cell.festival-islamic  { background: var(--col-islamic); color: white; }
+.mini-cell.festival-buddhist { background: var(--col-buddhist); color: white; }
+.mini-cell.festival-national { background: var(--col-national); color: white; }
+.mini-cell.festival-christian{ background: var(--col-christian); color: white; }
+
 /* ── Utility ────────────────────────────────── */
 .hidden { display: none !important; }
 @media (max-width: 600px) {

@@ -328,4 +328,298 @@ function handleSearch(query) {
   renderFestivalPanel(results);
 }
 
-/* END OF PART 1 — modal, date-picker, events & init continue in Part 2 */
+/* ══════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════ */
+
+function openModal(festivalId) {
+  const f = festivalById(festivalId);
+  if (!f) return;
+  state.modalFestivalId = festivalId;
+  state.modalTab = 'story';
+
+  // Header
+  document.getElementById('modal-emoji').textContent = f.emoji;
+  document.getElementById('modal-festival-name').textContent = f.name;
+  document.getElementById('modal-hindi-name').textContent = f.hindiName;
+
+  const [, mm, dd] = f.date.split('-');
+  const dayNum = Number(dd);
+  const suffix = dayNum === 1 ? 'st' : dayNum === 2 ? 'nd' : dayNum === 3 ? 'rd' : 'th';
+  document.getElementById('modal-meta').textContent =
+    `${MONTH_NAMES[Number(mm)-1]} ${dayNum}${suffix}, ${YEAR}  ·  ${f.hinduDate}  ·  ${typeLabel(f.type)}`;
+
+  // Region tags
+  const tagsEl = document.getElementById('modal-region-tags');
+  tagsEl.innerHTML = f.regions.map(r =>
+    `<span class="region-tag">${escHtml(r)}</span>`
+  ).join('');
+
+  // Header gradient by type
+  const modal = document.getElementById('festival-modal');
+  const header = document.getElementById('modal-header');
+  header.className = 'modal-header type-' + f.type;
+
+  // Tabs reset
+  document.querySelectorAll('.modal-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.tab === 'story');
+  });
+
+  renderModalTab('story', f);
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modal-close').focus();
+}
+
+function renderModalTab(tab, f) {
+  f = f || festivalById(state.modalFestivalId);
+  if (!f) return;
+  state.modalTab = tab;
+
+  const body = document.getElementById('modal-body');
+
+  if (tab === 'story') {
+    const paras = f.story.trim().split(/\n\n+/).map(p =>
+      `<p>${p.trim().replace(/\n/g, '<br>')}</p>`
+    ).join('');
+    body.innerHTML = `<div class="modal-story">${paras}</div>`;
+  }
+
+  else if (tab === 'celebration') {
+    body.innerHTML = `<div class="modal-celebration">
+      <div class="modal-section-icon">🎉</div>
+      <p>${escHtml(f.celebration).replace(/\n/g,'<br>')}</p>
+    </div>`;
+  }
+
+  else if (tab === 'regional') {
+    const entries = Object.entries(f.regionalVariations || {});
+    if (!entries.length) {
+      body.innerHTML = `<p class="modal-empty">Regional variation details coming soon.</p>`;
+      return;
+    }
+    body.innerHTML = `<div class="modal-regional">
+      ${entries.map(([region, desc]) => `
+        <div class="regional-entry">
+          <div class="regional-name">🗺️ ${escHtml(region)}</div>
+          <div class="regional-desc">${escHtml(desc)}</div>
+        </div>`).join('')}
+    </div>`;
+  }
+
+  else if (tab === 'significance') {
+    const paras = f.significance.trim().split(/\n\n+/).map(p =>
+      `<p>${p.trim().replace(/\n/g,'<br>')}</p>`
+    ).join('');
+    body.innerHTML = `<div class="modal-significance">
+      <div class="modal-section-icon">🌟</div>
+      ${paras}
+    </div>`;
+  }
+
+  else if (tab === 'resources') {
+    if (!f.resources || !f.resources.length) {
+      body.innerHTML = `<p class="modal-empty">Resources coming soon.</p>`;
+      return;
+    }
+    body.innerHTML = `<div class="modal-resources">
+      <p class="resources-intro">Explore these curated resources to learn more about ${escHtml(f.name)}:</p>
+      ${f.resources.map(r => `
+        <a class="resource-link" href="${escHtml(r.url)}" target="_blank" rel="noopener noreferrer">
+          <span class="resource-icon">📖</span>
+          <div class="resource-text">
+            <span class="resource-title">${escHtml(r.title)}</span>
+            <span class="resource-src">${escHtml(r.src)}</span>
+          </div>
+          <span class="resource-arrow">↗</span>
+        </a>`).join('')}
+    </div>`;
+  }
+}
+
+function closeModal() {
+  document.getElementById('festival-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+  state.modalFestivalId = null;
+}
+
+/* ══════════════════════════════════════════
+   DATE PICKER (multi-festival days)
+══════════════════════════════════════════ */
+
+function openDatePicker(festivals, anchorEl) {
+  const dp = document.getElementById('date-picker');
+  const header = document.getElementById('dp-header');
+  const listEl = document.getElementById('dp-list');
+
+  const [, mm, dd] = festivals[0].date.split('-');
+  header.textContent = `${MONTH_NAMES[Number(mm)-1]} ${Number(dd)} — Choose a festival`;
+
+  listEl.innerHTML = festivals.map(f => `
+    <button class="dp-item" data-id="${f.id}">
+      <span class="dp-emoji">${f.emoji}</span>
+      <span class="dp-name">${escHtml(f.name)}</span>
+      <span class="dp-type ${f.type}">${typeLabel(f.type)}</span>
+    </button>`).join('');
+
+  // Position near anchor
+  const rect = anchorEl.getBoundingClientRect();
+  dp.style.top = `${rect.bottom + window.scrollY + 8}px`;
+  dp.style.left = `${Math.min(rect.left + window.scrollX, window.innerWidth - 260)}px`;
+  dp.classList.remove('hidden');
+}
+
+function closeDatePicker() {
+  document.getElementById('date-picker').classList.add('hidden');
+}
+
+/* ══════════════════════════════════════════
+   EVENT DELEGATION & LISTENERS
+══════════════════════════════════════════ */
+
+function attachEvents() {
+  /* ── Nav buttons ── */
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchView(btn.dataset.view));
+  });
+
+  /* ── Month tabs ── */
+  document.querySelectorAll('.month-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchMonth(Number(tab.dataset.month)));
+  });
+
+  /* ── Prev/Next month arrows ── */
+  document.getElementById('prev-month').addEventListener('click', () => {
+    switchMonth(state.month - 1);
+  });
+  document.getElementById('next-month').addEventListener('click', () => {
+    switchMonth(state.month + 1);
+  });
+
+  /* ── Calendar grid: click on a day cell ── */
+  document.getElementById('cal-grid').addEventListener('click', e => {
+    const cell = e.target.closest('.cal-cell[data-festivals]');
+    if (!cell) return;
+    const ids = cell.dataset.festivals.split(',');
+    if (ids.length === 1) {
+      openModal(ids[0]);
+    } else {
+      const festivals = ids.map(id => festivalById(id)).filter(Boolean);
+      openDatePicker(festivals, cell);
+    }
+  });
+
+  document.getElementById('cal-grid').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const cell = e.target.closest('.cal-cell[data-festivals]');
+      if (cell) cell.click();
+    }
+  });
+
+  /* ── Festival panel: click a card ── */
+  document.getElementById('festival-list').addEventListener('click', e => {
+    const card = e.target.closest('.festival-card[data-id]');
+    if (card) openModal(card.dataset.id);
+  });
+
+  document.getElementById('festival-list').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const card = e.target.closest('.festival-card[data-id]');
+      if (card) { e.preventDefault(); openModal(card.dataset.id); }
+    }
+  });
+
+  /* ── Year view: click month card → calendar ── */
+  document.getElementById('year-grid').addEventListener('click', e => {
+    const card = e.target.closest('.year-month-card');
+    const festItem = e.target.closest('.year-fest-item[data-id]');
+    if (festItem) {
+      e.stopPropagation();
+      openModal(festItem.dataset.id);
+      return;
+    }
+    if (card) {
+      const m = Number(card.dataset.month);
+      switchMonth(m);
+      switchView('calendar');
+    }
+  });
+
+  document.getElementById('year-grid').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const card = e.target.closest('.year-month-card');
+      if (card) { e.preventDefault(); card.click(); }
+    }
+  });
+
+  /* ── Modal close ── */
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-overlay').addEventListener('click', closeModal);
+
+  /* ── Modal tabs ── */
+  document.querySelector('.modal-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.modal-tab');
+    if (!tab) return;
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderModalTab(tab.dataset.tab);
+  });
+
+  /* ── Date picker items ── */
+  document.getElementById('dp-list').addEventListener('click', e => {
+    const item = e.target.closest('.dp-item[data-id]');
+    if (!item) return;
+    closeDatePicker();
+    openModal(item.dataset.id);
+  });
+
+  document.getElementById('dp-close').addEventListener('click', closeDatePicker);
+
+  /* ── Search ── */
+  const searchInput = document.getElementById('festival-search');
+  searchInput.addEventListener('input', () => handleSearch(searchInput.value));
+
+  document.getElementById('search-clear').addEventListener('click', () => {
+    searchInput.value = '';
+    handleSearch('');
+    searchInput.focus();
+  });
+
+  /* ── Keyboard: Escape closes modal / date picker ── */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (!document.getElementById('festival-modal').classList.contains('hidden')) closeModal();
+      if (!document.getElementById('date-picker').classList.contains('hidden')) closeDatePicker();
+    }
+  });
+
+  /* ── Click outside date picker ── */
+  document.addEventListener('click', e => {
+    const dp = document.getElementById('date-picker');
+    if (!dp.classList.contains('hidden') &&
+        !dp.contains(e.target) &&
+        !e.target.closest('.cal-cell')) {
+      closeDatePicker();
+    }
+  });
+}
+
+/* ══════════════════════════════════════════
+   INIT
+══════════════════════════════════════════ */
+
+function init() {
+  // Set initial month tab states
+  document.querySelectorAll('.month-tab').forEach(t => {
+    t.setAttribute('aria-selected', t.dataset.month == state.month);
+    if (Number(t.dataset.month) === state.month) t.classList.add('active');
+  });
+
+  attachEvents();
+  renderCalendar();
+  renderFestivalPanel();
+}
+
+document.addEventListener('DOMContentLoaded', init);
