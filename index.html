@@ -30,6 +30,15 @@
     </nav>
   </header>
 
+  <!-- ═══════ CULTURAL TRIVIA TICKER ═══════ -->
+  <div class="trivia-ticker" id="trivia-ticker" aria-live="polite">
+    <span class="trivia-icon">✨</span>
+    <span class="trivia-text" id="trivia-text"></span>
+  </div>
+
+  <!-- ═══════ UPCOMING FESTIVALS WIDGET ═══════ -->
+  <div class="upcoming-bar" id="upcoming-bar" aria-label="Upcoming festivals"></div>
+
   <!-- ═══════ SEARCH + LEGEND BAR ═══════ -->
   <div class="toolbar">
     <div class="search-wrap">
@@ -54,6 +63,19 @@
 
     <!-- ── VIEW 1: CALENDAR ── -->
     <div id="view-calendar" class="view active">
+
+      <!-- Type filter bar -->
+      <div class="filter-bar" role="toolbar" aria-label="Filter by festival type">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="hindu">🕉 Hindu</button>
+        <button class="filter-btn" data-type="sikh">☬ Sikh</button>
+        <button class="filter-btn" data-type="islamic">☪ Islamic</button>
+        <button class="filter-btn" data-type="buddhist">☸ Buddhist/Jain</button>
+        <button class="filter-btn" data-type="national">🇮🇳 National</button>
+        <button class="filter-btn" data-type="christian">✝ Christian</button>
+      </div>
+
       <nav class="month-tabs" role="tablist" aria-label="Select month">
         <button class="month-tab" role="tab" data-month="1">Jan</button>
         <button class="month-tab" role="tab" data-month="2">Feb</button>
@@ -75,6 +97,7 @@
           <div class="calendar-month-header">
             <button class="month-nav-btn" id="prev-month" aria-label="Previous month">‹</button>
             <h2 class="cal-month-title" id="cal-header">January 2026</h2>
+            <button class="month-nav-btn today-btn" id="today-btn" title="Go to current month">Today</button>
             <button class="month-nav-btn" id="next-month" aria-label="Next month">›</button>
           </div>
           <div class="calendar-grid" id="cal-grid" role="grid" aria-label="Calendar days"></div>
@@ -152,7 +175,7 @@
       <p class="footer-links">
         <a href="https://curious96.com" target="_blank" rel="noopener">curious96.com</a>
         &nbsp;·&nbsp;
-        <a href="https://github.com/saumitraphatak/bharat-utsav" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/saumitraphatak/indian-calendar" target="_blank" rel="noopener">GitHub</a>
       </p>
     </div>
   </footer>

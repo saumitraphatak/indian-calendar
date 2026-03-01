@@ -623,3 +623,230 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+/* ══════════════════════════════════════════
+   V2 FEATURES
+══════════════════════════════════════════ */
+
+/* ── Moon phase data 2026 ── */
+const PURNIMA_2026 = new Set([
+  "2026-01-03","2026-02-01","2026-03-03","2026-04-02",
+  "2026-05-01","2026-05-31","2026-06-29","2026-07-29",
+  "2026-08-28","2026-09-26","2026-10-26","2026-11-24","2026-12-23"
+]);
+const AMAVASYA_2026 = new Set([
+  "2026-01-18","2026-02-17","2026-03-18","2026-04-17",
+  "2026-05-16","2026-06-14","2026-07-14","2026-08-12",
+  "2026-09-10","2026-10-10","2026-11-08","2026-12-07"
+]);
+
+/* ── Cultural trivia ── */
+const TRIVIA = [
+  "India is home to 22 officially scheduled languages and over 1,600 dialects.",
+  "The Hindu calendar has been in continuous use for over 2,000 years.",
+  "Rangoli art — geometric floor patterns — is one of the world's oldest art forms, dating to the Indus Valley Civilisation.",
+  "India has the world's largest number of vegetarians — estimated at 400–500 million people.",
+  "The game of Chess (Chaturanga) was invented in India around the 6th century CE.",
+  "Yoga originated in India over 5,000 years ago and is now practised by 300 million people worldwide.",
+  "The festival of Diwali is celebrated in over 40 countries across the world.",
+  "India's classical music tradition — Hindustani and Carnatic — is among the oldest continuous musical traditions on Earth.",
+  "The lotus flower, India's national flower, symbolises purity emerging from muddy waters — a core spiritual metaphor.",
+  "Kathakali, Bharatanatyam, Odissi, Manipuri, Kuchipudi — India has 8 classical dance forms, each from a different region.",
+  "Holi is now celebrated on every continent — proof of India's global cultural reach.",
+  "The Rigveda, composed around 1500–1200 BCE, is one of the oldest known texts in any Indo-European language.",
+  "Nalanda University (Bihar) was the world's first residential university, founded in the 5th century CE, with 10,000 students.",
+  "India produces the world's largest number of films annually — over 1,800 films across all languages.",
+  "The decimal system and the concept of zero were developed in India and transmitted to the world via Arab scholars.",
+  "Guru Nanak Dev Ji's compositions are written in 19 languages — the most linguistically diverse scripture by a single author.",
+  "The Kumbh Mela at Prayagraj is the world's largest human gathering — over 400 million people attended the 2019 edition.",
+  "India has 42 UNESCO World Heritage Sites — third highest in Asia.",
+  "Silk weaving in Varanasi (Banarasi silk) has been practised continuously for over 2,000 years.",
+  "The word 'shampoo' comes from the Hindi word 'champo' (to massage), introduced to Britain by Indian traders.",
+];
+
+let triviaIndex = 0;
+
+function startTriviaRotation() {
+  const el = document.getElementById('trivia-text');
+  if (!el) return;
+
+  function showNext() {
+    el.classList.remove('visible');
+    setTimeout(() => {
+      el.textContent = TRIVIA[triviaIndex % TRIVIA.length];
+      triviaIndex++;
+      el.classList.add('visible');
+    }, 600);
+  }
+
+  showNext();
+  setInterval(showNext, 8000);
+}
+
+/* ── Upcoming festivals widget ── */
+function renderUpcomingFestivals() {
+  const bar = document.getElementById('upcoming-bar');
+  if (!bar) return;
+
+  const today = new Date(2026, 2, 1); // use real today for production
+  // Use actual today if within 2026, else default to Jan 1
+  const realToday = new Date();
+  const refDate = realToday.getFullYear() === 2026 ? realToday : new Date(2026, 0, 1);
+
+  const upcoming = FESTIVALS
+    .map(f => {
+      const fDate = new Date(f.date);
+      const diff = Math.round((fDate - refDate) / 86400000);
+      return { ...f, diff };
+    })
+    .filter(f => f.diff >= 0)
+    .sort((a, b) => a.diff - b.diff)
+    .slice(0, 6);
+
+  if (!upcoming.length) {
+    bar.innerHTML = `<div class="upcoming-card"><span class="upcoming-info"><span class="upcoming-name">No upcoming festivals this year</span></span></div>`;
+    return;
+  }
+
+  bar.innerHTML = upcoming.map(f => {
+    const daysLabel = f.diff === 0 ? 'Today!' : f.diff === 1 ? 'Tomorrow' : `In ${f.diff} days`;
+    const cls = f.diff === 0 ? 'today' : f.diff <= 7 ? 'soon' : '';
+    return `<div class="upcoming-card" data-id="${f.id}">
+      <span class="upcoming-emoji">${f.emoji}</span>
+      <span class="upcoming-info">
+        <span class="upcoming-name">${escHtml(f.name)}</span>
+        <span class="upcoming-days ${cls}">${daysLabel}</span>
+      </span>
+    </div>`;
+  }).join('');
+}
+
+/* ── Type filter state ── */
+state.typeFilter = 'all';
+
+function applyTypeFilter(type) {
+  state.typeFilter = type;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.type === type);
+  });
+
+  // Grey out non-matching cells in calendar
+  document.querySelectorAll('.cal-cell.has-festival').forEach(cell => {
+    const ids = (cell.dataset.festivals || '').split(',');
+    const fests = ids.map(id => festivalById(id)).filter(Boolean);
+    const matches = type === 'all' || fests.some(f => f.type === type);
+    cell.classList.toggle('filtered-out', !matches);
+  });
+
+  // Filter the panel
+  const panelFests = type === 'all'
+    ? getFestivalsForMonth(state.month)
+    : getFestivalsForMonth(state.month).filter(f => f.type === type);
+  renderFestivalPanel(panelFests);
+}
+
+/* ── Override renderCalendar to add names + moon phases ── */
+const _origRenderCalendar = renderCalendar;
+
+renderCalendar = function() {
+  const month = state.month;
+  const grid = document.getElementById('cal-grid');
+  const header = document.getElementById('cal-header');
+  const panelLabel = document.getElementById('panel-month-label');
+
+  header.textContent = `${MONTH_NAMES[month - 1]} ${YEAR}`;
+  panelLabel.textContent = `Festivals in ${MONTH_NAMES[month - 1]}`;
+
+  const daysInMonth = getDaysInMonth(month);
+  const firstDay = getFirstDayOfWeek(month);
+  const today = new Date();
+  const isCurrentMonth = today.getFullYear() === YEAR && today.getMonth() + 1 === month;
+
+  let html = '';
+  DAY_NAMES.forEach(d => { html += `<div class="cal-day-name">${d}</div>`; });
+  for (let i = 0; i < firstDay; i++) { html += `<div class="cal-cell empty"></div>`; }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const ds = dateStr(month, day);
+    const festivals = getFestivalsForDate(ds);
+    const isToday = isCurrentMonth && day === today.getDate();
+    const hasFest = festivals.length > 0;
+
+    // Festival name labels (Google Calendar style)
+    let labels = '';
+    if (hasFest) {
+      festivals.slice(0, 2).forEach(f => {
+        labels += `<span class="cal-fest-label ${f.type}">${escHtml(f.name)}</span>`;
+      });
+      if (festivals.length > 2) {
+        labels += `<span class="cal-fest-more">+${festivals.length - 2} more</span>`;
+      }
+    }
+
+    // Moon phase indicator
+    let moon = '';
+    if (PURNIMA_2026.has(ds))   moon = `<span class="moon-indicator" title="Purnima (Full Moon)">🌕</span>`;
+    if (AMAVASYA_2026.has(ds))  moon = `<span class="moon-indicator" title="Amavasya (New Moon)">🌑</span>`;
+
+    const classes = [
+      'cal-cell',
+      isToday ? 'today' : '',
+      hasFest ? 'has-festival' : '',
+    ].filter(Boolean).join(' ');
+
+    const dataAttr = hasFest
+      ? `data-festivals="${escHtml(festivals.map(f => f.id).join(','))}" tabindex="0" role="button" aria-label="${day} ${MONTH_NAMES[month-1]}: ${festivals.map(f=>f.name).join(', ')}"`
+      : `aria-label="${day} ${MONTH_NAMES[month-1]}"`;
+
+    html += `<div class="${classes}" data-date="${ds}" ${dataAttr}>
+      ${moon}
+      <span class="cal-day-num">${day}</span>
+      <div class="cal-fest-names">${labels}</div>
+    </div>`;
+  }
+
+  grid.innerHTML = html;
+
+  // Re-apply type filter if active
+  if (state.typeFilter && state.typeFilter !== 'all') {
+    applyTypeFilter(state.typeFilter);
+  }
+};
+
+/* ── Attach new event listeners ── */
+const _origAttachEvents = attachEvents;
+attachEvents = function() {
+  _origAttachEvents();
+
+  // Filter buttons
+  document.querySelector('.filter-bar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (btn) applyTypeFilter(btn.dataset.type);
+  });
+
+  // Today button
+  document.getElementById('today-btn').addEventListener('click', () => {
+    const m = new Date().getFullYear() === YEAR ? new Date().getMonth() + 1 : 1;
+    switchMonth(m);
+  });
+
+  // Upcoming bar clicks
+  document.getElementById('upcoming-bar').addEventListener('click', e => {
+    const card = e.target.closest('.upcoming-card[data-id]');
+    if (card) openModal(card.dataset.id);
+  });
+};
+
+/* ── Patch init to start new features ── */
+const _origInit = init;
+init = function() {
+  _origInit();
+  renderUpcomingFestivals();
+  startTriviaRotation();
+};
+
+// Re-run init (DOMContentLoaded already fired if this is appended)
+document.addEventListener('DOMContentLoaded', () => {
+  renderUpcomingFestivals();
+  startTriviaRotation();
+});
