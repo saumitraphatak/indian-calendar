@@ -29,6 +29,7 @@
   --col-jain:     #4CAF50;
   --col-national: #2C4FA3;
   --col-christian:#8B2FC7;
+  --col-sports:   #0096c7;
 
   --radius:   12px;
   --radius-sm: 6px;
@@ -187,6 +188,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .legend-dot.buddhist { background: var(--col-buddhist); }
 .legend-dot.national { background: var(--col-national); }
 .legend-dot.christian{ background: var(--col-christian); }
+.legend-dot.sports   { background: var(--col-sports); }
 .legend-label { font-size: 0.77rem; color: var(--text-mid); margin-right: 0.6rem; }
 
 /* ── Views ─────────────────────────────────── */
@@ -360,6 +362,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .dot.jain     { background: var(--col-jain); }
 .dot.national { background: var(--col-national); }
 .dot.christian{ background: var(--col-christian); }
+.dot.sports   { background: var(--col-sports); }
 .dot-more { font-size: 0.6rem; color: var(--text-soft); font-weight: 600; }
 
 /* Festival name tooltip on cell hover */
@@ -1286,6 +1289,7 @@ details[open] .explained-summary::before { transform: rotate(90deg); }
 .cal-fest-label.buddhist { background: var(--col-buddhist); }
 .cal-fest-label.national { background: var(--col-national); }
 .cal-fest-label.christian{ background: var(--col-christian); }
+.cal-fest-label.sports   { background: var(--col-sports); }
 .cal-fest-more {
   font-size: 0.58rem; color: var(--text-soft);
   padding-left: 0.3rem; font-style: italic;

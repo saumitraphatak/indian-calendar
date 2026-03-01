@@ -54,7 +54,8 @@ function festivalById(id) {
 function typeLabel(type) {
   const map = {
     hindu: 'Hindu', sikh: 'Sikh', islamic: 'Islamic',
-    buddhist: 'Buddhist/Jain', national: 'National', christian: 'Christian'
+    buddhist: 'Buddhist/Jain', national: 'National', christian: 'Christian',
+    sports: 'Sports'
   };
   return map[type] || type;
 }

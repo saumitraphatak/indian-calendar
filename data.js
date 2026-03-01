@@ -1024,6 +1024,411 @@ Christmas in India has absorbed Indian colour: Santa Claus arrives not through s
     ]
   }
 
+  /* ════════════ SPORTS EVENTS 2026 ════════════ */
+
+  {
+    id: "winter-olympics-2026",
+    name: "Winter Olympics 2026",
+    hindiName: "शीतकालीन ओलंपिक 2026",
+    date: "2026-02-06",
+    hinduDate: "Feb 6 – 22 · Milano-Cortina, Italy",
+    type: "sports",
+    emoji: "🏔️",
+    regions: ["All India (spectator)", "India Olympics team"],
+    shortDesc: "The XXV Winter Olympics in Milano-Cortina, Italy — India's athletes compete in alpine skiing and cross-country events.",
+    story: `The 2026 Winter Olympic Games (February 6–22) unfolded across the breathtaking landscape of the Italian Alps — Milan's ice arenas, Cortina d'Ampezzo's alpine runs, Livigno's snowboard halfpipe, and the ski jumps of Val di Fiemme. More than 3,500 athletes from 93 nations competed across 16 disciplines and 195 events.
+
+The Games marked a historic milestone: NHL players returned to Olympic ice hockey for the first time since 2014, following a breakthrough agreement between the IIHF and the league. The debut sport of ski mountaineering — racing up and down steep slopes on lightweight skis — added a thrilling new dimension to the programme.
+
+India sent a small contingent, with alpine skier Arif Khan and cross-country specialists among those carrying the tricolour. While medals eluded India's winter athletes — as they typically do — their participation on the world's biggest winter stage is itself a growing story of a tropical nation finding its feet in the snow.`,
+    celebration: `India's sports bars and homes stayed up late watching live coverage. The opening ceremony at Milan's San Siro — the first Olympic ceremony at that iconic football stadium — was a spectacle of Italian design and culture. The figure skating, ski jumping, and ice hockey competitions drew large Indian TV audiences. The Games also reignited conversations about India investing in winter sports infrastructure in the Himalayas.`,
+    regionalVariations: {
+      "Himachal Pradesh / J&K / Uttarakhand": "Mountain states with ski slopes watched most keenly — Gulmarg and Auli resorts saw an uptick in visitors inspired by Olympic alpine events.",
+      "Delhi / Mumbai (urban viewers)": "Sports bars and streaming viewership peaked for figure skating and short-track speed skating.",
+      "Indian Olympic Association": "Focused on lessons for 2030 Winter Olympics preparation; discussions on funding for young athletes in luge and biathlon."
+    },
+    significance: `Every Winter Olympics is a reminder that India's sporting horizon extends beyond cricket, wrestling, and badminton. The Himalayas offer natural terrain for world-class winter athletes — the challenge is infrastructure, funding, and identifying talent early. India's long-term ambition: host a Winter Olympics in the 2040s.`,
+    resources: [
+      { title: "Milano Cortina 2026 — Official Site", url: "https://www.olympics.com/en/milano-cortina-2026", src: "Olympics.com" },
+      { title: "2026 Winter Olympics — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Winter_Olympics", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "icc-t20-wc-2026",
+    name: "ICC Men's T20 World Cup 2026",
+    hindiName: "टी20 विश्व कप 2026",
+    date: "2026-02-07",
+    hinduDate: "Feb 7 – Mar 8 · India & Sri Lanka",
+    type: "sports",
+    emoji: "🏏",
+    regions: ["All India", "Delhi", "Mumbai", "Kolkata", "Chennai", "Ahmedabad"],
+    shortDesc: "India co-hosts the Men's T20 World Cup — 20 teams, 55 matches across Narendra Modi Stadium, Eden Gardens, Wankhede, and more.",
+    story: `The 10th edition of the ICC Men's T20 World Cup (February 7 – March 8, 2026) was a homecoming like no other. India and Sri Lanka co-hosted a 20-team, 55-match tournament that brought the world's best T20 cricketers to the iconic cathedrals of Indian cricket: the 132,000-capacity Narendra Modi Stadium in Ahmedabad, Eden Gardens in Kolkata, Wankhede in Mumbai, Chepauk in Chennai, and the Arun Jaitley Stadium in Delhi.
+
+Defending champions India — the team that won the 2024 World Cup in the West Indies — entered as heavy favourites on home soil. The tournament's most anticipated match: India vs Pakistan on February 15 in Colombo, held at a neutral venue per bilateral agreement.
+
+New entry Italy made their first-ever Men's T20 World Cup appearance, while Bangladesh's withdrawal (over security concerns about playing in India) led to Scotland stepping in — the first time Bangladesh missed a men's T20 World Cup.`,
+    celebration: `India's five hosting cities were transformed into cricket festivals. Narendra Modi Stadium's matches sold out within minutes. Mumbai's Marine Drive became an unofficial fan zone. Hotels across Chennai, Kolkata, and Delhi reported 100% occupancy on match days. The atmosphere at Eden Gardens — with its 70,000 capacity — was described by broadcasters as the loudest in cricket history.`,
+    regionalVariations: {
+      "Ahmedabad": "Narendra Modi Stadium hosted the Final on March 8 — the world's largest cricket venue at full capacity was an unforgettable sight.",
+      "Mumbai": "Wankhede Stadium hosted key group games; Marine Drive and Bandra became informal cricket carnivals.",
+      "Kolkata": "Eden Gardens — the 'Mecca of Indian cricket' — hosted two Super Eight matches with its legendary atmosphere.",
+      "Chennai": "MA Chidambaram Stadium (Chepauk) known for its fiery, knowledgeable crowd; South Indian fans especially vocal.",
+      "Delhi": "Arun Jaitley Stadium hosted India's opening match vs USA on February 7.",
+      "Sri Lanka (Colombo)": "R. Premadasa Stadium hosted several matches including India vs Pakistan, maintaining the spirit of co-hosting."
+    },
+    significance: `Hosting a global cricket event of this scale on home soil is a moment of national pride. The BCCI's ability to organise world-class cricket infrastructure — from spotless pitches to seamless broadcast operations for a global audience — demonstrated India's position at the centre of world cricket's financial and cultural gravity.`,
+    resources: [
+      { title: "ICC Men's T20 WC 2026 — Official", url: "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026", src: "ICC" },
+      { title: "2026 Men's T20 World Cup — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup", src: "Wikipedia" },
+      { title: "ESPNcricinfo — T20 WC 2026", url: "https://www.espncricinfo.com/series/icc-men-s-t20-world-cup-2025-26-1502138", src: "ESPNcricinfo" }
+    ]
+  },
+
+  {
+    id: "icc-t20-wc-final-2026",
+    name: "ICC T20 World Cup Final",
+    hindiName: "टी20 विश्व कप फाइनल",
+    date: "2026-03-08",
+    hinduDate: "March 8 · Narendra Modi Stadium, Ahmedabad",
+    type: "sports",
+    emoji: "🏆",
+    regions: ["Ahmedabad", "All India"],
+    shortDesc: "The grand finale of the Men's T20 World Cup 2026 at the world's largest cricket stadium in Ahmedabad.",
+    story: `March 8, 2026 — the day the cricketing world held its breath. The final of the ICC Men's T20 World Cup 2026 was played at the Narendra Modi Stadium in Ahmedabad, the world's largest cricket venue, in front of a capacity crowd of 132,000. For cricket-mad India, this was the pinnacle of a tournament they had poured their hearts into as both hosts and competitors.
+
+The Super Eight stage had narrowed the field to four semi-finalists; two survived to contest the ultimate prize. With India co-hosting, even the possibility of an India vs Pakistan final sent the entire subcontinent into a frenzy of anticipation. The trophy that waited on the podium: the gleaming ICC T20 World Cup — the most-watched short-format championship on Earth.`,
+    celebration: `If India reached the final, the entire country effectively stopped — businesses closed early, streets emptied, and every screen in the nation tuned in. The atmosphere inside Narendra Modi Stadium was electric beyond description. Whether India lifted the trophy or another side did, cricket fans across India honoured the sport with a passion only the subcontinent can produce.`,
+    regionalVariations: {
+      "Ahmedabad / Gujarat": "Host city celebrations; massive watch parties across the city; traffic halted around the stadium hours before match time.",
+      "Mumbai / Delhi / Kolkata / Chennai": "Giant LED screens set up in public squares; fan parks organised by state governments.",
+      "Villages and small towns": "Tea stalls, dhabas, and community halls became impromptu cricket screening venues — a uniquely Indian tradition."
+    },
+    significance: `A World Cup Final on home soil is a generational event. The last time India hosted an ICC final was the 2023 ODI World Cup (though Australia won that one). 2026 gave Indian cricket fans another chance to witness the sport's greatest occasion in their own stadiums, with their own noise.`,
+    resources: [
+      { title: "ICC Men's T20 WC 2026 — Official", url: "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026", src: "ICC" },
+      { title: "Narendra Modi Stadium", url: "https://en.wikipedia.org/wiki/Narendra_Modi_Stadium", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "ipl-2026",
+    name: "IPL 2026 — Season Opens",
+    hindiName: "इंडियन प्रीमियर लीग 2026",
+    date: "2026-03-28",
+    hinduDate: "Mar 28 – May 31 · 10 teams, 84 matches",
+    type: "sports",
+    emoji: "🪁",
+    regions: ["All India", "Mumbai", "Bengaluru", "Chennai", "Kolkata", "Delhi", "Hyderabad"],
+    shortDesc: "India's biggest cricket carnival kicks off — TATA IPL 2026 (Season 19) with 10 teams, 84 matches, and a nation at full fever.",
+    story: `The Indian Premier League is not merely a cricket tournament — it is India's grandest sporting carnival, a two-month festival of sixes, strategy, and celebrity that brings together the world's best players under the home-city passions of millions of fans.
+
+TATA IPL 2026 is Season 19 — the tournament expanded to 84 matches for the first time, with each of the 10 teams playing 14 league games. Defending champions Royal Challengers Bengaluru (who won their maiden IPL title in 2025) returned to defend, while old giants like Mumbai Indians, Chennai Super Kings, and Kolkata Knight Riders sought to reclaim dominance.
+
+The season ran March 28 – May 31. One significant shadow: following a deadly stampede during RCB's 2025 victory parade, the BCCI and Karnataka government negotiated venue adjustments for RCB's home matches. The IPL also coincided with state elections in West Bengal, Tamil Nadu, and Assam, requiring a phased schedule release.`,
+    celebration: `IPL season transforms India: the nation's productivity dips, evening plans revolve around match schedules, and fantasy cricket apps see their peak usage. Stadium nights are festival-like — fireworks, cheerleaders, DJ sets between overs, and the roar of loyal fan bases. Cities paint themselves in team colours: yellow for Chennai, blue for Mumbai, pink for Rajasthan, green-and-gold for Kolkata.`,
+    regionalVariations: {
+      "Mumbai": "Mumbai Indians' Wankhede matches are the most glamorous — Bollywood celebrities in the stands, sea breeze, and world-class crowds.",
+      "Chennai": "The 'Yellow Army' at Chepauk is India's most loyal and knowledgeable fan base; Vadivelu memes and mass celebrations are distinctly Tamil.",
+      "Kolkata": "Eden Gardens' Knight Riders matches: the loudest and most atmospheric stadium experience in India.",
+      "Bengaluru": "RCB's Chinnaswamy Stadium — a fortress of passion, though the 2025 tragedy hung over the 2026 season.",
+      "Delhi / Hyderabad / Jaipur / Ahmedabad": "Each city has its own flavour of fanaticism — from Delhi's cosmopolitan crowd to Jaipur's royal-pink pride."
+    },
+    significance: `The IPL single-handedly revolutionised global cricket. It created the franchise T20 model copied worldwide, made Indian cricketers the highest-paid players on earth, and turned evening cricket into prime-time entertainment for 1.4 billion people. Season 19 was another chapter in this extraordinary story.`,
+    resources: [
+      { title: "IPL Official Site", url: "https://www.iplt20.com/", src: "BCCI / IPL" },
+      { title: "2026 IPL — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Indian_Premier_League", src: "Wikipedia" },
+      { title: "ESPNcricinfo — IPL 2026", url: "https://www.espncricinfo.com/series/ipl-2026-1510719", src: "ESPNcricinfo" }
+    ]
+  },
+
+  {
+    id: "french-open-2026",
+    name: "French Open (Roland-Garros)",
+    hindiName: "फ्रेंच ओपन 2026",
+    date: "2026-05-18",
+    hinduDate: "May 18 – Jun 7 · Paris, France",
+    type: "sports",
+    emoji: "🎾",
+    regions: ["All India (spectator)", "India tennis fans"],
+    shortDesc: "The clay-court Grand Slam at Roland-Garros — the world watches as Alcaraz, Sinner, and Gauff battle on terre battue.",
+    story: `Roland-Garros (May 18 – June 7, 2026) is the most demanding of tennis's four Grand Slams — two weeks of gruelling clay-court battles that test endurance, heavy topspin, and mental fortitude unlike any other surface. The distinctive red clay of Paris slows the ball and produces longer rallies; it is where champions are truly made.
+
+The 2026 French Open follows a 2025 edition won by Carlos Alcaraz (men's) and Coco Gauff (women's). Both will return looking to defend. World No. 1 Jannik Sinner — coming off Australian Open and Wimbledon titles in 2025 — seeks his first French Open crown. India's Sumit Nagal and Ramkumar Ramanathan have been competing on the ATP Tour, though Grand Slam breakthrough remains the dream.
+
+India's most celebrated Roland-Garros connection remains Leander Paes and Mahesh Bhupathi's doubles dominance in the late 1990s and 2000s — they won the French Open doubles together, making India briefly the most feared doubles partnership in the world.`,
+    celebration: `India's tennis community — small but passionate — watches through the night given the 3.5-hour time difference. Pune, Delhi, and Mumbai's tennis academies use the Grand Slam season to inspire young players. Social media debates over Sinner vs Alcaraz echo in Indian sports circles.`,
+    regionalVariations: {
+      "Maharashtra (Pune)": "Shrinivas Khanna's legacy and the Pune Open's ATP heritage make Maharashtra the home of Indian tennis.",
+      "Karnataka (Bengaluru)": "Rohan Bopanna, India's most decorated current doubles player, hails from Coorg, Karnataka — his Grand Slam appearances draw huge pride.",
+      "Tamil Nadu": "SDAT's tennis academy has produced multiple Davis Cup players; Chennai Open (now defunct) once brought top-50 players to India."
+    },
+    significance: `Grand Slam tennis represents the highest individual excellence in sport — no team to carry you, pure athletic and mental battle. For India, tennis has produced legends (Paes, Bhupathi, Bopanna) who punched far above their country's weight in doubles, inspiring a generation.`,
+    resources: [
+      { title: "Roland-Garros Official", url: "https://www.rolandgarros.com/", src: "FFT" },
+      { title: "2026 ATP Tour — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_ATP_Tour", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "ipl-final-2026",
+    name: "IPL 2026 — Grand Final",
+    hindiName: "आईपीएल 2026 फाइनल",
+    date: "2026-05-31",
+    hinduDate: "May 31 · TBA Venue",
+    type: "sports",
+    emoji: "🏆",
+    regions: ["All India"],
+    shortDesc: "The curtain falls on IPL Season 19 — one franchise lifts the trophy, a nation exhales.",
+    story: `May 31, 2026 — the IPL Final. By this evening, 84 matches have been played, stars have risen and fallen, and only two franchises remain. The IPL Final is India's equivalent of a Super Bowl: the whole country pauses. Even cricket agnostics know the score.
+
+The IPL Final trophy presentation is one of cricket's most theatrical moments — fireworks, confetti, the losing captain's gracious speech, and then the winning captain hoisting the glittering trophy as thousands in the stadium and hundreds of millions on screens across India erupt.`,
+    celebration: `Wherever the Final is hosted, that city transforms into a cricket capital for 24 hours. Fans who couldn't get tickets host rooftop watch parties. Restaurants run IPL Final specials. Delivery apps report their highest orders of the year as India settles in to watch. The winning team's home city explodes — car horns, street celebrations, and social media floods with joy.`,
+    regionalVariations: {
+      "Winning team's home city": "Spontaneous street celebrations; the franchise's home stadium opens for fans to gather even without tickets.",
+      "Mumbai / Delhi / Chennai": "India's three largest cricket markets always see mass public celebrations regardless of which team wins.",
+      "Fantasy cricket players": "IPL Final is the season's biggest fantasy cricket day — crores of rupees in prizes decided on the night."
+    },
+    significance: `The IPL has made cricket the world's second-richest sport league (after the NFL). Its Final is watched by more live television viewers than any other single sporting event in India's annual calendar, surpassing even India's own international cricket matches.`,
+    resources: [
+      { title: "IPL Official Site", url: "https://www.iplt20.com/", src: "BCCI / IPL" }
+    ]
+  },
+
+  {
+    id: "fifa-world-cup-2026",
+    name: "FIFA World Cup 2026 — Opens",
+    hindiName: "फीफा विश्व कप 2026",
+    date: "2026-06-11",
+    hinduDate: "Jun 11 – Jul 19 · USA, Canada, Mexico",
+    type: "sports",
+    emoji: "⚽",
+    regions: ["All India (spectator)", "Football belt: West Bengal, Kerala, Goa, Manipur, Mizoram"],
+    shortDesc: "The biggest sporting event on Earth — 48 nations, 104 matches across 16 cities. The first World Cup with three host nations.",
+    story: `The 2026 FIFA World Cup (June 11 – July 19) is the most ambitious World Cup in history: the first hosted by three nations (USA, Canada, Mexico), the first with 48 teams instead of 32, and the first with 104 matches — 25 more than 2022. The opening ceremony and first match took place at the legendary Estadio Azteca in Mexico City on June 11, with Mexico facing South Africa in a historic moment for the stadium that has now hosted three World Cup openers.
+
+The expanded format introduced a new Round of 32, with 12 groups of four teams each feeding into a knockout bracket. Football heavyweights Brazil, France, Germany, Argentina, England, and Spain all entered as title contenders — though the unpredictability of a 48-team tournament meant more opportunities for underdogs than ever before.
+
+India did not qualify (they rarely do), but Indian football fans are among the world's most passionate neutrals — especially in Kerala, West Bengal, Goa, and the northeastern states where football culture runs deep. Kolkata's Maidan, where football has been played since the 1870s, transforms into a festival of South American and European jerseys each World Cup season.`,
+    celebration: `India's football-loving states effectively shut down for major matches. Kerala's towns split between Brazil and Argentina camps (a decades-old rivalry that has nothing to do with either country and everything to do with local football culture). Goa's beach shacks become World Cup viewing hubs. Kolkata's tea stalls debate formations at 2 AM. Manipur and Mizoram, India's most football-intensive northeastern states, celebrate as if their own team were playing.`,
+    regionalVariations: {
+      "Kerala": "The Brazil vs Argentina debate is a cultural institution; entire villages split into camps; 2 AM viewing parties are normal.",
+      "West Bengal (Kolkata)": "The 'Mecca of Indian football' — East Bengal vs Mohun Bagan football culture means every World Cup is personal.",
+      "Goa": "Portuguese footballing heritage; Goa has produced India's finest club football talent; beach bars run 24/7 World Cup broadcasts.",
+      "Manipur / Mizoram / Meghalaya": "Northeast India's football-first states; Bhaichung Bhutia-era inspiration still burns; community screenings in every village.",
+      "Mumbai / Delhi": "Expat communities of South Americans, Europeans, and Africans bring authentic World Cup atmosphere to sports bars."
+    },
+    significance: `The FIFA World Cup is the most-watched event in human history — the 2022 final alone drew 1.5 billion viewers. For India, where football is the second-most-popular sport, the World Cup is a month-long festival of global belonging, even without a national team in the tournament. Every four years, India joins the planet in the beautiful game's greatest celebration.`,
+    resources: [
+      { title: "FIFA World Cup 2026 — Official", url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026", src: "FIFA" },
+      { title: "2026 FIFA World Cup — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "womens-t20-wc-2026",
+    name: "ICC Women's T20 World Cup",
+    hindiName: "महिला टी20 विश्व कप 2026",
+    date: "2026-06-12",
+    hinduDate: "Jun 12 – Jul 5 · England",
+    type: "sports",
+    emoji: "🏏",
+    regions: ["All India", "Women's cricket fans"],
+    shortDesc: "12 nations compete at Lord's, Edgbaston, Old Trafford & more — India face Pakistan at Edgbaston on June 14.",
+    story: `The 10th ICC Women's T20 World Cup (June 12 – July 5, 2026) was hosted by England — one of cricket's spiritual homes — with Lord's hosting the final on July 5. Twelve nations competed across seven iconic English venues: Lord's, Old Trafford, Headingley, Edgbaston, The Rose Bowl, The Oval, and Bristol.
+
+India's women's team, one of the most popular in world cricket, was placed in Group 1 alongside Australia, South Africa, Pakistan, Bangladesh, and the Netherlands. The most anticipated match: India vs Pakistan at Edgbaston on June 14.
+
+Indian women's cricket has surged in profile since Mithali Raj and Jhulan Goswami inspired a generation, and now Smriti Mandhana, Harmanpreet Kaur, and Deepti Sharma carry the flag. The BCCI's growing investment in women's cricket — including the Women's Premier League — has strengthened depth significantly.`,
+    celebration: `India's viewership for women's cricket has grown dramatically — the 2023 Women's World Cup final drew over 50 million Indian viewers. The India vs Pakistan match at Edgbaston was one of the most-watched women's cricket games globally. Indian fans, even watching at midnight due to the time difference, flooded social media with support.`,
+    regionalVariations: {
+      "All India": "Growing TV and streaming viewership; the Women's Premier League (WPL) has created city-based fanbases for women's cricket.",
+      "Delhi / Mumbai / Bengaluru": "WPL franchises in these cities mean fans have pre-existing emotional connections with players representing India.",
+      "Schools and colleges": "Women's T20 World Cup is used as inspiration material in schools promoting women's sports participation."
+    },
+    significance: `Women's cricket is undergoing a revolution in India. The Women's Premier League (modelled on IPL), BCCI's equal pay initiatives, and consistent media coverage have transformed women's cricketers from afterthoughts into celebrities. Every World Cup is a milestone in this ongoing transformation.`,
+    resources: [
+      { title: "ICC Women's T20 WC 2026 — Official", url: "https://www.icc-cricket.com/tournaments/womens-t20-worldcup-2026", src: "ICC" },
+      { title: "2026 Women's T20 WC — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Women%27s_T20_World_Cup", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "wimbledon-2026",
+    name: "Wimbledon 2026",
+    hindiName: "विंबलडन 2026",
+    date: "2026-06-29",
+    hinduDate: "Jun 29 – Jul 12 · London, England",
+    type: "sports",
+    emoji: "🎾",
+    regions: ["All India (spectator)"],
+    shortDesc: "The oldest Grand Slam — strawberries, whites, grass courts, and the world's finest tennis at the All England Club.",
+    story: `Wimbledon (June 29 – July 12, 2026) is the oldest and most storied Grand Slam — held at the All England Lawn Tennis & Croquet Club since 1877. Players wear all-white. Crowds eat strawberries and cream. Centre Court's retractable roof opens to summer sky when weather allows. No other sporting venue carries quite the same weight of history and tradition.
+
+Defending men's champion Jannik Sinner arrived as one of the firm favourites, with Carlos Alcaraz — who had already beaten him in the 2026 French Open final — eager to add another Wimbledon title to his collection. On the women's side, Iga Świątek (defending Wimbledon champion) faced pressure from a rising pack.
+
+India's Rohan Bopanna — at 46, still competing at the highest level of doubles — remained a beloved figure at Wimbledon, where his longevity and grace have earned enormous respect.`,
+    celebration: `India's tennis fans stay up through the night for Wimbledon finals; the event coincides with Indian school summer holidays, making it accessible for younger fans. The shared Commonwealth connection with England gives Wimbledon a nostalgic resonance in India that other Slams don't quite replicate.`,
+    regionalVariations: {
+      "Karnataka": "Rohan Bopanna's Coorg origin makes Wimbledon particularly personal for Karnataka — 'Coorg ke Bete' screens in the hills.",
+      "Maharashtra (Pune)": "India's tennis capital follows closely; young players at Shiv Chhatrapati Sports Complex watch for inspiration.",
+      "Delhi": "The Delhi Lawn Tennis Association and India's Davis Cup history give the capital a deep tennis culture."
+    },
+    significance: `Wimbledon is one of sport's most powerful symbols of excellence and tradition. India has produced world-class doubles players — Paes, Bhupathi, Bopanna — who have won Wimbledon doubles titles. Their legacy continues to inspire India's next generation of tennis talent.`,
+    resources: [
+      { title: "Wimbledon Official", url: "https://www.wimbledon.com/", src: "AELTC" },
+      { title: "2026 Wimbledon — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Wimbledon_Championships", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "fifa-world-cup-final-2026",
+    name: "FIFA World Cup Final 2026",
+    hindiName: "फीफा वर्ल्ड कप फाइनल 2026",
+    date: "2026-07-19",
+    hinduDate: "July 19 · MetLife Stadium, New Jersey (New York)",
+    type: "sports",
+    emoji: "🏆",
+    regions: ["All India (spectator)", "Football-loving states"],
+    shortDesc: "The grandest sporting final on Earth — the FIFA World Cup 2026 decider at MetLife Stadium before 82,500 fans.",
+    story: `July 19, 2026 — the FIFA World Cup Final at MetLife Stadium in East Rutherford, New Jersey, home stadium of the New York Giants and Jets, packed with 82,500 fans who flew, drove, and dreamed their way to this moment. One nation would lift the golden trophy; the rest of the world would watch.
+
+In India, it was 2 AM IST when the first whistle blew — and millions were awake. Kerala's beaches had been lit with bonfires through the night. Kolkata's Maidan had hosted a massive public screening earlier in the day. Goa's restaurants hadn't closed. This is what the World Cup does to India: it makes the whole world feel like one stadium.
+
+The 2026 Final was the culmination of the most-expanded World Cup in history — 48 teams, 104 matches, three host nations — all of it distilling down to 90 minutes (or more) at one of the Western Hemisphere's great stadiums.`,
+    celebration: `India effectively celebrated with whichever football identity it had claimed for the month. Brazil supporters in Kerala and Argentina fans in West Bengal stayed awake as if their own national team had reached the final. The result sparked celebrations or grief in equal measure — a testimony to how deeply football has embedded itself in India's sporting soul.`,
+    regionalVariations: {
+      "Kerala": "Public watch parties in Thiruvananthapuram, Kochi, and Kozhikode; winning country's flag raised in multiple villages.",
+      "West Bengal": "Maidan's football community holds post-final debates for days; Bengali sports media devotes front pages.",
+      "Goa": "Beach party atmosphere — most international-feeling World Cup celebration in India.",
+      "Manipur / Nagaland": "Northeast India's football passion at its peak; community celebrations regardless of result."
+    },
+    significance: `The World Cup Final is watched by more simultaneous viewers than any event in human history. For India — a football-loving nation without a competitive national team — it is a humbling reminder and a powerful inspiration: the goal is to one day field a team that plays in this tournament, not just watches it.`,
+    resources: [
+      { title: "FIFA World Cup 2026 — Official", url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026", src: "FIFA" }
+    ]
+  },
+
+  {
+    id: "commonwealth-games-2026",
+    name: "Commonwealth Games Glasgow 2026",
+    hindiName: "राष्ट्रमंडल खेल 2026",
+    date: "2026-07-23",
+    hinduDate: "Jul 23 – Aug 2 · Glasgow, Scotland",
+    type: "sports",
+    emoji: "🥇",
+    regions: ["All India", "Para sports community"],
+    shortDesc: "India's biggest multi-sport event after the Olympics — 10 sports including 6 Para events in Glasgow.",
+    story: `The XXIII Commonwealth Games (Glasgow 2026, July 23 – August 2) was a leaner, more focused Games than previous editions — 10 sports across four venues in an eight-mile corridor in Glasgow, with six integrated Para sports. The 2026 edition was awarded to Glasgow after Victoria (Australia) withdrew as host in 2023 over cost concerns — making Glasgow the first city to host the Commonwealth Games twice (after 2014).
+
+India entered as one of the strongest Commonwealth Games nations, with historical dominance in wrestling, weightlifting, boxing, badminton, and shooting. The 2022 Birmingham Games saw India win 61 medals (22 gold). Glasgow offered fewer sports and events, but India's athletes were hungry for medals, with Wrestling, Weightlifting, Boxing, Swimming, and Athletics on the programme.
+
+The Games' mascot "Finnie" — a Glaswegian unicorn wearing a traffic cone as her horn (a reference to Glasgow's famous Wellington statue tradition) — captured global affection.`,
+    celebration: `India's medal count is followed with national intensity — the country typically finishes in the top three. Javelin star Neeraj Chopra, badminton heroes PV Sindhu and Lakshya Sen, and wrestling powerhouses carried the highest expectations. Each gold medal was greeted with the same fervour as an Olympic medal in India's media.`,
+    regionalVariations: {
+      "Haryana": "India's wrestling powerhouse — Haryana boys and girls (Vinesh Phogat's legacy) are always Commonwealth medal favourites.",
+      "Punjab / Himachal Pradesh": "Weightlifting strength from these states; multiple Commonwealth golds over the decades.",
+      "Andhra Pradesh / Telangana": "PV Sindhu's home base; badminton communities follow her Commonwealth bids with extreme passion.",
+      "Kerala": "Strong athletics tradition; relay and middle-distance runners from Kerala frequently represent India."
+    },
+    significance: `The Commonwealth Games sit in a unique emotional space for India — they're the tournament where India wins a lot of medals and the country allows itself to feel genuinely proud of its athletes, not just cricket stars. They also spotlight sports like wrestling, weightlifting, and boxing that get little attention outside the Games cycle.`,
+    resources: [
+      { title: "Glasgow 2026 — Official", url: "https://www.glasgow2026.com/", src: "Glasgow 2026" },
+      { title: "2026 Commonwealth Games — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Commonwealth_Games", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "us-open-2026",
+    name: "US Open Tennis 2026",
+    hindiName: "यूएस ओपन टेनिस 2026",
+    date: "2026-08-31",
+    hinduDate: "Aug 31 – Sep 13 · New York City",
+    type: "sports",
+    emoji: "🎾",
+    regions: ["All India (spectator)"],
+    shortDesc: "The year's final Grand Slam — the electric night sessions of Flushing Meadows under New York's lights.",
+    story: `The US Open (August 31 – September 13, 2026) at the USTA Billie Jean King National Tennis Center in Flushing Meadows, New York, is the season's final Grand Slam — and the loudest. Night sessions under the Arthur Ashe Stadium lights, with New York City's energy radiating through the crowd, create an atmosphere unlike any other tennis event.
+
+Defending men's champion Carlos Alcaraz and women's champion Aryna Sabalenka entered as favourites. Jannik Sinner, seeking a Grand Slam calendar sweep, was on most people's radar as the player most likely to challenge Alcaraz.
+
+India's connection to the US Open includes Leander Paes' doubles success and Sania Mirza's mixed doubles titles. Young Indian players like Sumit Nagal have qualified for main draw appearances, giving Indian fans a stake in the draw.`,
+    celebration: `The US Open falls just as Indian monsoon season begins winding down — fans watch late-night sessions as the rains ease. The time difference (New York is 9.5 hours behind IST) means evening sessions are broadcast in Indian primetime, making the US Open surprisingly accessible for Indian fans.`,
+    regionalVariations: {
+      "Maharashtra (Pune / Mumbai)": "India's tennis heartland; Mahesh Bhupathi's academies follow the Slam closely.",
+      "Telangana": "Sania Mirza's Hyderabad — her US Open mixed doubles titles (2014, 2015) remain the gold standard for Indian women's tennis.",
+      "All India": "Growing streaming audiences; US Open night sessions draw strong viewership given the IST-friendly broadcast schedule."
+    },
+    significance: `The US Open marks the end of tennis's Grand Slam calendar — whoever claims the year-end No. 1 ranking has usually won or contended at Flushing Meadows. For Indian tennis, it remains the venue where Sania Mirza rose to global stardom and Leander Paes cemented his doubles legacy.`,
+    resources: [
+      { title: "US Open Official", url: "https://www.usopen.org/", src: "USTA" },
+      { title: "2026 US Open — Dates", url: "https://www.usopen.org/en_US/news/articles/2025-12-11/2026_us_open_tournament_dates.html", src: "USTA" }
+    ]
+  },
+
+  {
+    id: "chess-olympiad-2026",
+    name: "Chess Olympiad 2026",
+    hindiName: "शतरंज ओलंपियाड 2026",
+    date: "2026-09-15",
+    hinduDate: "Sep 15 – 28 · Samarkand, Uzbekistan",
+    type: "sports",
+    emoji: "♟️",
+    regions: ["All India", "Tamil Nadu", "Telangana", "West Bengal"],
+    shortDesc: "The 46th Chess Olympiad in Samarkand — India fields the world's strongest chess nation, led by World Champion D. Gukesh.",
+    story: `The 46th Chess Olympiad (September 15–28, 2026) in Samarkand, Uzbekistan — at the Silk Road International Exhibition Center — is chess's most prestigious team event. Nearly 380 teams from 200 nations compete in open and women's sections. India entered as the sport's most exciting nation, riding a wave of unprecedented success.
+
+In 2023, the Chess Olympiad was held in Chennai — India's hometown advantage led to an emotional gold medal. In 2024, D. Gukesh became World Chess Champion at age 18, the youngest-ever world champion. R. Praggnanandhaa has been a consistent top-5 player. Arjun Erigaisi, Vidit Gujarathi, and B. Adhiban round out a team that is, arguably, the strongest India has ever fielded.
+
+India's women's team — led by Koneru Humpy, Harika Dronavalli, and rising star Divya Deshmukh — is also among the world's elite. The 2026 Olympiad was a chance for India to prove that 2023's home gold was no fluke.`,
+    celebration: `Chess viewership in India has surged thanks to Gukesh's World Championship win. The Olympiad rounds are followed live on chess.com, Lichess, and ChessBase India's YouTube channel — a platform that has singlehandedly made chess a mainstream spectator sport in India, with millions watching GM commentary. Tamil Nadu especially erupted during Indian team wins.`,
+    regionalVariations: {
+      "Tamil Nadu": "Home of Gukesh, Praggnanandhaa, and Adhiban — Chennai has become the chess capital of the world; schools have chess as a subject.",
+      "Telangana": "Koneru Humpy and Harika Dronavalli are Telugu icons; Hyderabad follows women's chess as seriously as men's.",
+      "West Bengal": "Historic chess culture — Kolkata clubs have produced grandmasters for decades.",
+      "All India (online)": "ChessBase India's YouTube coverage of Olympiad rounds drew millions of live viewers — chess is now a spectator sport in India."
+    },
+    significance: `India's chess revolution — fuelled by visionary coaches, AICF investment, and the extraordinary talent of a generation born around 2000 — has made India the sport's most exciting nation. D. Gukesh's World Championship victory at 18 was India's deepest individual sports achievement in decades. The 2026 Olympiad was a chance to turn individual brilliance into collective glory.`,
+    resources: [
+      { title: "46th Chess Olympiad — FIDE", url: "https://calendar.fide.com/calendar.php?id=5072", src: "FIDE" },
+      { title: "ChessBase India", url: "https://www.chessbase.in/", src: "ChessBase India" },
+      { title: "Chess Olympiad 2026 — Wikipedia", url: "https://en.wikipedia.org/wiki/46th_Chess_Olympiad", src: "Wikipedia" }
+    ]
+  },
+
+  {
+    id: "asian-games-2026",
+    name: "Asian Games 2026 — Aichi-Nagoya",
+    hindiName: "एशियाई खेल 2026",
+    date: "2026-09-19",
+    hinduDate: "Sep 19 – Oct 4 · Aichi Prefecture, Japan",
+    type: "sports",
+    emoji: "🏅",
+    regions: ["All India", "Athletics", "Badminton", "Wrestling", "Boxing", "Kabaddi"],
+    shortDesc: "The 20th Asian Games in Aichi-Nagoya, Japan — India's second-biggest medal opportunity after the Olympics, across 41 sports.",
+    story: `The 20th Asian Games (September 19 – October 4, 2026) in Aichi Prefecture, Japan — with the opening ceremony at Paloma Mizuho Stadium in Nagoya — brought together 45 National Olympic Committees across 41 sports, 68 disciplines, and 461 events. Japan hosted the Asian Games for the third time (after Tokyo 1958 and Hiroshima 1994), in venues that also used 2020 Olympic infrastructure.
+
+India is typically Asia's third-largest medal winner (after China and Japan), and the Asian Games are India's biggest medal haul outside the Olympics. At the 2023 Hangzhou Asian Games, India won a historic 107 medals (28 gold) — its best-ever performance. The 2026 squad arrived in Nagoya building on that momentum.
+
+India's medal hopes centred on Neeraj Chopra (javelin), PV Sindhu and Lakshya Sen (badminton), India's kabaddi teams (perennial Asian champions), wrestling's deep talent pool, and the newly strengthened athletics programme. Chess was added as an Asian Games sport, giving India additional medal opportunities.`,
+    celebration: `The Asian Games fall in October — India's prime festival season — meaning medal announcements compete with Navratri and Dussehra for social media attention. Major wins generate massive online celebration. The Indian Olympic Association's live updates and Doordarshan/Star Sports coverage keep fans engaged through the 16-day event.`,
+    regionalVariations: {
+      "Haryana": "Wrestling and boxing medals machine — Haryana athletes typically deliver 30-40% of India's Asian Games haul.",
+      "Kerala": "Athletics strength; relay teams and individual sprinters often carry Kerala pride into Asian Games.",
+      "Andhra Pradesh / Telangana": "Badminton's heartland — PV Sindhu, Saina Nehwal's tradition continues.",
+      "Punjab / Himachal Pradesh": "Weightlifting and shooting medals regularly come from these states.",
+      "Manipur / Mizoram": "Boxing — Mary Kom's legacy; northeastern India punches above its weight in combat sports.",
+      "Karnataka": "Hockey — India's hockey revival owes much to Karnataka's infrastructure and tradition."
+    },
+    significance: `The Asian Games measure India's standing in the continent's sporting order. The 2023 breakthrough of 107 medals showed that India is no longer just a cricket-and-badminton nation — it is building depth across athletics, swimming, and combat sports. The 2026 edition is a test of whether that 2023 performance was a peak or a new baseline.`,
+    resources: [
+      { title: "Aichi-Nagoya 2026 — Official", url: "https://www.aichi-nagoya2026.org/en/", src: "AINAGOC" },
+      { title: "2026 Asian Games — Wikipedia", url: "https://en.wikipedia.org/wiki/2026_Asian_Games", src: "Wikipedia" },
+      { title: "Olympics.com — Asian Games 2026", url: "https://www.olympics.com/en/news/asian-games-2026-competition-schedule-released", src: "Olympics.com" }
+    ]
+  }
+
 ]; // ← END OF FESTIVALS ARRAY
 
 /* ════════════════════════════════════════════════
