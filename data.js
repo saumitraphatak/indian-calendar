@@ -1022,7 +1022,7 @@ Christmas in India has absorbed Indian colour: Santa Claus arrives not through s
       { title: "Thomas Christians — Kerala Heritage", url: "https://en.wikipedia.org/wiki/Saint_Thomas_Christians", src: "Wikipedia" },
       { title: "Christmas in Goa — Goa Tourism", url: "https://www.goa-tourism.com/christmas-in-goa.html", src: "Goa Tourism" }
     ]
-  }
+  },
 
   /* ════════════ SPORTS EVENTS 2026 ════════════ */
 
