@@ -1,0 +1,18 @@
+# Bharat Utsav — India's Festival Calendar 2026
+
+> Interactive single-page application that tells the story behind every Indian festival of 2026 — origin myths, regional traditions, foods, and the logic of the Hindu lunisolar calendar.
+
+Bharat Utsav covers 7 faith/cultural categories (Hindu, Sikh, Islamic, Buddhist/Jain, National, Christian, Sports) with rich detail for each festival: multi-paragraph origin stories, celebration guides, regional variations across Indian states, and curated external resources. A separate "Calendar Explained" view teaches the Panchanga system (Tithi, Paksha, Masa, Ritu, Samvat). Built as pure static HTML/CSS/JS — no framework, no npm.
+
+## Application
+
+- [Festival Calendar](https://saumitraphatak.github.io/indian-calendar/): Main SPA — monthly calendar grid with festival dots, clickable day cells, and a festival detail sidebar. Three views: Calendar, Year View, and Calendar Explained.
+
+## Documentation
+
+- [Source Code on GitHub](https://github.com/saumitraphatak/indian-calendar): Full source — index.html, style.css, app.js, data.js (festival database).
+- [Author Website](https://curious96.com): Saumitra Phatak's personal site.
+
+## Optional
+
+- [README](https://github.com/saumitraphatak/indian-calendar/blob/main/README.md): Project overview and setup notes.
